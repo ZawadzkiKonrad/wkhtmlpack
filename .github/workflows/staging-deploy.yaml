@@ -4,12 +4,11 @@ on:
 jobs:
   build:
       runs-on: windows-latest    
-      steps:          
-      name: execute py script # run the run.py to get the latest data
-            env:
-              TARGET: vagrant
-              TARGET: msvc2015-win64
-              src-dir: https://github.com/ZawadzkiKonrad/wkhtml
-              run: |
+      steps:
+       env:
+        TARGET: vagrant
+        TARGET: msvc2015-win64
+        src-dir: https://github.com/ZawadzkiKonrad/wkhtml
+          run: |
               python build.py
            
