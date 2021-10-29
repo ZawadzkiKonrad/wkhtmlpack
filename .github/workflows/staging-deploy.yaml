@@ -5,7 +5,7 @@ jobs:
   build:
       runs-on: windows-latest    
       steps:          
-        name: execute py script # run the run.py to get the latest data
+      name: execute py script # run the run.py to get the latest data
             env:
               TARGET: vagrant
               TARGET: msvc2015-win64
