@@ -1,8 +1,11 @@
 name: py
     
     on:
-      schedule:
-        - cron: "0 0 * * *" #runs at 00:00 UTC everyday
+      workflow_dispatch;
+
+
+      # schedule:
+      #   - cron: "0 0 * * *" #runs at 00:00 UTC everyday
     
     jobs:
       build:
@@ -16,6 +19,10 @@ name: py
             with:
               python-version: 3.8 #install the python needed
           - name: execute py script # run the run.py to get the latest data
+            env:
+              TARGET: vagrant
+              TARGET: msvc2015-win64
+              src-dir: https://github.com/ZawadzkiKonrad/wkhtml
             run: |
               python build.py
             # env:
