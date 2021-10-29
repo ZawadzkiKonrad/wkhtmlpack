@@ -6,7 +6,7 @@ jobs:
     runs-on: windows-latest    
     steps:
     name: execute py script
-      env:
+    env:
         TARGET: vagrant
         TARGET: msvc2015-win64
         src-dir: https://github.com/ZawadzkiKonrad/wkhtml
