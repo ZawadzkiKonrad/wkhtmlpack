@@ -1,13 +1,13 @@
 name: py    
-    on:
-      workflow_dispatch:
+on:
+  workflow_dispatch:
 jobs:
-      build:
-        runs-on: windows-latest
+  build:
+      runs-on: windows-latest
     
-        steps:
-          - name: checkout repo content
-            uses: actions/checkout@v2 # checkout the repository content to github runner.
+      steps:
+           name: checkout repo content
+           uses: actions/checkout@v2 # checkout the repository content to github runner.
           - name: setup python
             uses: actions/setup-python@v2
             with:
@@ -17,7 +17,7 @@ jobs:
               TARGET: vagrant
               TARGET: msvc2015-win64
               src-dir: https://github.com/ZawadzkiKonrad/wkhtml
-            run: |
+              run: |
               python build.py
             # env:
             #   key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
