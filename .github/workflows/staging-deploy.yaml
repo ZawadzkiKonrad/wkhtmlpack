@@ -5,8 +5,8 @@ jobs:
   build:
       runs-on: windows-latest    
       steps:
-       env:
+      env:
         TARGET: vagrant
         TARGET: msvc2015-win64
         src-dir: https://github.com/ZawadzkiKonrad/wkhtml
-          run: python build           
+      run: python build           
