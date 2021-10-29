@@ -3,21 +3,13 @@ on:
   workflow_dispatch:
 jobs:
   build:
-      runs-on: windows-latest
-    
-      steps:
-          name: setup python
-          uses: actions/setup-python@v2
-          with:
-            python-version: 3.8 #install the python needed
-          - name: execute py script # run the run.py to get the latest data
+      runs-on: windows-latest    
+      steps:          
+        name: execute py script # run the run.py to get the latest data
             env:
               TARGET: vagrant
               TARGET: msvc2015-win64
               src-dir: https://github.com/ZawadzkiKonrad/wkhtml
               run: |
               python build.py
-            # env:
-            #   key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
-          - name: export index
-            .... # use crosponding script or actions to help export.
+           
