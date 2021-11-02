@@ -1,12 +1,11 @@
 name: runner    
-on:
-  workflow_dispatch:
+on: push
 jobs:
   build:
     runs-on: windows-latest    
     steps:
-    name: execute py script
-    env:
+      name: execute py script
+      env:
         TARGET: vagrant
         TARGET: msvc2015-win64
         src-dir: '*/wkhtml'
