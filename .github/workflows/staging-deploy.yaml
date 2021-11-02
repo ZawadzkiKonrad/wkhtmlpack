@@ -20,4 +20,4 @@ jobs:
       - name: Install dependencies
         run: |
           pip install PyYAML
-          python build vagrant msvc2015-win64 ./wkhtml
+          python build.py vagrant msvc2015-win64 ./wkhtml
