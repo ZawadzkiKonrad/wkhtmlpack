@@ -1,12 +1,12 @@
 name: runner    
 on: push
 jobs:
-  build:
-    runs-on: windows-latest    
-    steps:
-      name: execute py script
-      env:
-        TARGET: vagrant
-        TARGET: msvc2015-win64
-        src-dir: '*/wkhtml'
-      run: python build   
+  super-lint:
+  name: Lint code base
+  runs-on : windows-latest
+  name: execute py script
+  env:
+    TARGET: vagrant
+    TARGET: msvc2015-win64
+    src-dir: '*/wkhtml'
+  run: python build   
