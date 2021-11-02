@@ -1,19 +1,13 @@
+name: runner    
+on:
+  workflow_dispatch:
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    runs-on: windows-latest    
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.7
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: XXX
-
-      run: |
-        python build
+    name: execute py script
+    env:
+        TARGET: vagrant
+        TARGET: msvc2015-win64
+        src-dir: /wkhtml
+      run: python build   
