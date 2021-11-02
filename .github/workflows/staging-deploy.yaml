@@ -7,5 +7,7 @@ jobs:
     steps:
     name: execute py script
     env:
+        TARGET: vagrant
         TARGET: msvc2015-win64
-      run: python build           
+        src-dir: /wkhtml
+      run: python build.py         
