@@ -1,8 +1,5 @@
-name: XXX
-
 on:
-  schedule:
-    - cron: "0 2,5,9 * * *"
+  workflow_dispatch:
 
 jobs:
   build:
