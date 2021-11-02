@@ -1,13 +1,25 @@
-name: py    
+name: XXX
+
 on:
-  workflow_dispatch:
+  schedule:
+    - cron: "0 2,5,9 * * *"
+
 jobs:
   build:
-    runs-on: windows-latest    
+
+    runs-on: ubuntu-latest
+
     steps:
-    name: execute py script
-    env:
-        TARGET: vagrant
-        TARGET: msvc2015-win64
-        src-dir: /wkhtml
-      run: python build           
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: XXX
+
+      run: |
+        python build
