@@ -7,6 +7,5 @@ jobs:
     steps:
     name: execute py script
     env:
-        TARGET: vagrant
         TARGET: msvc2015-win64
       run: python build           
