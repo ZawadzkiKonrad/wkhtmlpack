@@ -18,4 +18,5 @@ jobs:
           python-version: '3.9.0-alpha - 3.9.0'
       - name: Install dependencies
         run: |
+          pip install PyYAML
           python build.py
