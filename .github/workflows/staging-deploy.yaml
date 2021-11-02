@@ -9,5 +9,4 @@ jobs:
     env:
         TARGET: vagrant
         TARGET: msvc2015-win64
-        
       run: python build           
