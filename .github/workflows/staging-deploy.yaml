@@ -10,4 +10,4 @@ jobs:
         TARGET: vagrant
         TARGET: msvc2015-win64
         src-dir: /wkhtml
-    run: python build.py         
+      run: python build.py         
