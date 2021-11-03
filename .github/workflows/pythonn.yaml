@@ -4,29 +4,16 @@ on: [push]
 
 jobs:
   vagrant-up:
-    runs-on: macos-10.15
+    runs-on: windows-latest
     strategy:
       matrix:
         python-version: [3.6, 3.7, 3.8, 3.9]
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Cache Vagrant boxes
-        uses: actions/cache@v2
+      - name: Use oxr463/setup-vagrant
+        uses: oxr463/setup-vagrant@0.0.1
         with:
-          path: ~/.vagrant.d/boxes
-          key: ${{ runner.os }}-vagrant-${{ hashFiles('Vagrantfile') }}
-          restore-keys: |
-            ${{ runner.os }}-vagrant-
-
-      - name: Show Vagrant version
-        run: vagrant --version
-
-      - name: Run vagrant up
-        run: vagrant up
-
-      - name: ssh into box after boot
-        run: vagrant ssh -c "echo 'hello world!'"
+          exec: |
+              vagrant up
    
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
