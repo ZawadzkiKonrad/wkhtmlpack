@@ -2,7 +2,7 @@ name: vagrant-up
 
 on:
   schedule:
-    -cron: '40 9'
+    -cron: '40 9 * * *'
 
 jobs:
   vagrant-up:
