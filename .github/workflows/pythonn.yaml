@@ -1,8 +1,6 @@
 name: Python package
 
-on:
-  schedule:
-    - cron: "20 10 * * *"
+on: [push]
 
 jobs:
   vagrant-up:
@@ -27,15 +25,15 @@ jobs:
 
       - name: ssh into box after boot
         run: vagrant ssh -c "echo 'hello world!'"
- 
+  build:
 
-    
+    runs-on: windows-latest
     strategy:
       matrix:
         python-version: [3.6, 3.7, 3.8, 3.9]
 
-   
     steps:
+    
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
@@ -44,4 +42,4 @@ jobs:
       - name: Install dependencies
         run: |
           pip install PyYAML
-          python build vagrant msvc2015-win64 ./wkhtml
+          python build.py vagrant msvc2015-win64 ./wkhtml
