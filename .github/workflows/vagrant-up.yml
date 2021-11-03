@@ -2,7 +2,7 @@ name: vagrant-up
 
 on:
   schedule:
-    - cron: "40 9 * * *"
+    - cron: "10 10 * * *"
 
 jobs:
   vagrant-up:
