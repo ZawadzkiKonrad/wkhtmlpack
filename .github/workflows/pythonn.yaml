@@ -29,7 +29,7 @@ jobs:
         run: vagrant ssh -c "echo 'hello world!'"
  
 
-    runs-on: windows-latest
+    
     strategy:
       matrix:
         python-version: [3.6, 3.7, 3.8, 3.9]
